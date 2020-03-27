@@ -17,9 +17,18 @@ Route::middleware(['jwt.verify'])->group(function(){
 
 
     //pelanggan
-    Route::post('pelanggan/tambah', "PelangganController@getAll");
+    Route::post('pelanggan/tambah', "PelangganController@store");
     Route::get('pelanggan', "PelangganController@getAll");
 	Route::delete('pelanggan/delete/{id}', "PelangganController@delete");
 	Route::post('pelanggan/ubah', "UserController@update");
 	Route::get('pelanggan/data', "UserController@index");
+
+	//barang
+	Route::post('barang/tambah', "PelangganController@store");
+    Route::get('barang', "PelangganController@getAll");
+	Route::delete('barang/delete/{id}', "PelangganController@delete");
+	Route::post('barang/ubah', "UserController@update");
+	Route::get('barang/data', "UserController@index");
+
+
 });
